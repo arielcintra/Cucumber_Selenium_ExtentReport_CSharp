@@ -33,7 +33,7 @@ namespace Selecao_Stefanini.Features.Steps_Definitions
         [Given(@"eu insiro meu email")]
         public void GivenEuInsiroMeuEmail()
         {
-            _la.InserirEmailNovoCadastro("stefaniniatuomation@teste.com.br");
+            _la.InserirEmailNovoCadastro("automacaopstefanini@teste.com.br");
         }
 
         [Given(@"clico no botao CRIAR CONTA")]
@@ -62,7 +62,7 @@ namespace Selecao_Stefanini.Features.Steps_Definitions
         public void ThenValidoQueOsMeusDadosCadastradosEstaoCorretos()
         {
             _ca.ValidoDadosCadastradosAddress("http://automationpractice.com/index.php?controller=addresses", "Ariel", "Cintra", "Porto Digital", "Recife", "Alaska", "99571");
-            _ca.ValidoDadosCadastradosPersonal("http://automationpractice.com/index.php?controller=identity", "Ariel", "Cintra", "stefaniniatuomation@teste.com.br");
+            _ca.ValidoDadosCadastradosPersonal("http://automationpractice.com/index.php?controller=identity", "Ariel", "Cintra", "automacaopstefanini@teste.com.br");
             _driver.Close();
         }
     }

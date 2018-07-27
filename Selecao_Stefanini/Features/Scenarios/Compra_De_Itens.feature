@@ -18,9 +18,10 @@ Scenario: Reabrir compra finalizada e adicionar mais 3 itens
 	Then valido que minha compra foi finalizada com sucesso
 
 @MyWhishlistComItens
-Scenario: Esqueci senha
+Scenario: Adicionar item My WishList
 	Given que estou na tela home
-	When adiciono itens na my wishlist
+	When realizo login
+	And adiciono itens na my wishlist
 	And faco o log off
 	And valido que fui rediricionado para a pagina home
 	And realizo login

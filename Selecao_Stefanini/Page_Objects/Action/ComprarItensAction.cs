@@ -67,7 +67,7 @@ namespace Selecao_Stefanini.Page_Objects.Action
             Assert.IsTrue(lbAddedToCartSucess.Displayed);
         }
 
-            public void AdicionarItensMyWishList()
+        public void AdicionarItensMyWishList()
         {
             _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
             product1.Click();
@@ -171,7 +171,7 @@ namespace Selecao_Stefanini.Page_Objects.Action
 
         public void ValidarTelaMyWishList()
         {
-            Assert.IsFalse(_driver.Title.Equals("My Store"));
+            Assert.IsTrue(_driver.Title.Equals("My Store"));
         }
     }
 }

@@ -75,6 +75,7 @@ namespace Selecao_Stefanini
         [When(@"adiciono itens na my wishlist")]
         public void WhenAdicionoItensNaMyWishlist()
         {
+            _driver.Navigate().GoToUrl("http://automationpractice.com/index.php");
             _cia.AdicionarItensMyWishList();
         }
         
