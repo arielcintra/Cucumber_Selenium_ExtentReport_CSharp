@@ -44,12 +44,6 @@ namespace Selecao_Stefanini
             _la.ClicarBotaoSignIn();
         }
         
-        [When(@"faco o log off")]
-        public void WhenFacoOLogOff()
-        {
-            _driver.Navigate().GoToUrl("http://automationpractice.com/index.php?mylogout=");
-        }
-        
         [When(@"valido que fui redirecionada para tela myaccount")]
         public void ThenValidoQueFuiRedirecionadaParaTelaMyaccount()
         {
@@ -60,6 +54,7 @@ namespace Selecao_Stefanini
         public void ThenValidoQueFuiRedirecionadaParaTelaHome()
         {
             _la.ValidarTelaHome();
+            _driver.Navigate().GoToUrl("http://automationpractice.com/index.php?mylogout=");
         }
 
         [Then(@"valido erro ao efetuar o login")]

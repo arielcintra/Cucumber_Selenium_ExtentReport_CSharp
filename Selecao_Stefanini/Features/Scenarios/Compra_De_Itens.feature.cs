@@ -61,6 +61,52 @@ namespace Selecao_Stefanini.Features.Scenarios
             testRunner.CollectScenarioErrors();
         }
         
+        [TechTalk.SpecRun.ScenarioAttribute("Realizar compra", new string[] {
+                "RealizarCompra"}, SourceLine=3)]
+        public virtual void RealizarCompra()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Realizar compra", new string[] {
+                        "RealizarCompra"});
+#line 4
+this.ScenarioSetup(scenarioInfo);
+#line 5
+ testRunner.Given("que estou na tela home", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 6
+ testRunner.When("adiciono itens no carrinho", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 7
+ testRunner.And("finalizo minha compra", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 8
+ testRunner.Then("valido que minha compra foi finalizada com sucesso", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Reabrir compra finalizada e adicionar mais 3 itens", new string[] {
+                "ReabrirCompraParaAdicionarItens"}, SourceLine=10)]
+        public virtual void ReabrirCompraFinalizadaEAdicionarMais3Itens()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Reabrir compra finalizada e adicionar mais 3 itens", new string[] {
+                        "ReabrirCompraParaAdicionarItens"});
+#line 11
+this.ScenarioSetup(scenarioInfo);
+#line 12
+ testRunner.Given("que estou na tela home", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 13
+ testRunner.When("adiciono itens no carrinho", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 14
+ testRunner.And("acesso a tela para finalizar minha compra", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 15
+ testRunner.And("volto para tela home", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 16
+ testRunner.Then("incluo mais itens no carrinho", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 17
+ testRunner.When("finalizo minha compra", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 18
+ testRunner.Then("valido que minha compra foi finalizada com sucesso", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
         [TechTalk.SpecRun.ScenarioAttribute("Esqueci senha", new string[] {
                 "MyWhishlistComItens"}, SourceLine=20)]
         public virtual void EsqueciSenha()
@@ -74,16 +120,12 @@ this.ScenarioSetup(scenarioInfo);
 #line 23
  testRunner.When("adiciono itens na my wishlist", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 24
- testRunner.When("faco o log off", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("faco o log off", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 25
  testRunner.And("valido que fui rediricionado para a pagina home", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 26
- testRunner.And("volto para tela de login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("realizo login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 27
- testRunner.And("insiro meu usuario e senha", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 28
- testRunner.And("clico no botao Sign in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 29
  testRunner.Then("valido que estou na tela da my wishlist", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

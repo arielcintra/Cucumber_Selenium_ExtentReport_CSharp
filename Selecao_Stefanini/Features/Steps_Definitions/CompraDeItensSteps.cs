@@ -35,10 +35,17 @@ namespace Selecao_Stefanini
         {
             _cia.AdicionarItensCarrinho();
         }
-        
+
+        [When(@"faco o log off")]
+        public void WhenFacoOLogOff()
+        {
+            _driver.Navigate().GoToUrl("http://automationpractice.com/index.php?mylogout=");
+        }
+
         [When(@"finalizo minha compra")]
         public void WhenFinalizoMinhaCompra()
         {
+            _cia.AcessarSummary();
             _cia.Summary();
             _cia.Login("a@teste.com.br", "123456");
             _cia.Address("Ariel Cintra", "Porto Digital", "Recife, Alaska 99571", "United States", "997452892");
@@ -49,68 +56,59 @@ namespace Selecao_Stefanini
         [When(@"insiro meu login")]
         public void WhenInsiroMeuLogin()
         {
-            ScenarioContext.Current.Pending();
+            _cia.Login("a@teste.com.br", "123456");
         }
         
         [When(@"acesso a tela para finalizar minha compra")]
         public void WhenAcessoATelaParaFinalizarMinhaCompra()
         {
-            ScenarioContext.Current.Pending();
+            _cia.AcessarSummary();
         }
         
         [When(@"volto para tela home")]
         public void WhenVoltoParaTelaHome()
         {
-            ScenarioContext.Current.Pending();
+            _driver.Navigate().GoToUrl("http://automationpractice.com/index.php");
+            _cia.ValidarTelaHome();
         }
         
         [When(@"adiciono itens na my wishlist")]
         public void WhenAdicionoItensNaMyWishlist()
         {
-            ScenarioContext.Current.Pending();
+            _cia.AdicionarItensMyWishList();
         }
         
         [When(@"valido que fui rediricionado para a pagina home")]
         public void WhenValidoQueFuiRediricionadoParaAPaginaHome()
         {
-            ScenarioContext.Current.Pending();
+            _cia.ValidarTelaHome();
         }
         
-        [When(@"volto para tela de login")]
+        [When(@"realizo login")]
         public void WhenVoltoParaTelaDeLogin()
         {
-            ScenarioContext.Current.Pending();
-        }
-        
-        [When(@"insiro meu usuario e senha")]
-        public void WhenInsiroMeuUsuarioESenha()
-        {
-            ScenarioContext.Current.Pending();
-        }
-        
-        [When(@"clico no botao Sign in")]
-        public void WhenClicoNoBotaoSignIn()
-        {
-            ScenarioContext.Current.Pending();
+            _driver.Navigate().GoToUrl("http://automationpractice.com/index.php?controller=authentication&back=my-account");
+            _cia.Login("a@teste.com.br", "123456");
         }
         
         [Then(@"valido que minha compra foi finalizada com sucesso")]
         public void ThenValidoQueMinhaCompraFoiFinalizadaComSucesso()
         {
             _cia.ValidarFinalizacaoCOmpra();
-            _driver.Close();
+            _driver.Navigate().GoToUrl("http://automationpractice.com/index.php?mylogout=");
         }
         
         [Then(@"incluo mais itens no carrinho")]
-        public void ThenIncluoMaisIntensNoCarrinho(int p0)
+        public void ThenIncluoMaisIntensNoCarrinho()
         {
-            ScenarioContext.Current.Pending();
+            _cia.AdicionarMaisItensCarrinho();
         }
         
         [Then(@"valido que estou na tela da my wishlist")]
         public void ThenValidoQueEstouNaTelaDaMyWishlist()
         {
-            ScenarioContext.Current.Pending();
+            _cia.ValidarTelaMyWishList();
+            _driver.Close();
         }
     }
 }

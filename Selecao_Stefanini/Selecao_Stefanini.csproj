@@ -98,14 +98,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Features\Scenarios\Autenticacao_Usuario.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>Autenticacao_Usuario.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Features\Scenarios\Criar_Novo_Usuario1.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>Criar_Novo_Usuario.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Features\Steps_Definitions\AutenticacaoDeUsuarioSteps.cs" />
     <Compile Include="Features\Steps_Definitions\CompraDeItensSteps.cs" />

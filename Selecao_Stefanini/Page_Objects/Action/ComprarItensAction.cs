@@ -28,6 +28,7 @@ namespace Selecao_Stefanini.Page_Objects.Action
 
         public void ValidarTelaHome()
         {
+            Thread.Sleep(1000);
             Assert.IsTrue(_driver.Title.Equals("My Store"));
         }
 
@@ -52,17 +53,33 @@ namespace Selecao_Stefanini.Page_Objects.Action
 
             Thread.Sleep(3000);
             Assert.IsTrue(lbAddedToCartSucess.Displayed);
-
-            _driver.Navigate().GoToUrl("http://automationpractice.com/index.php?controller=order");
         }
 
-        public void AdicionarItensMyWishList()
+        public void AdicionarMaisItensCarrinho()
+        {
+            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
+            product3.Click();
+
+            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
+            btnAddToCart.Click();
+
+            Thread.Sleep(3000);
+            Assert.IsTrue(lbAddedToCartSucess.Displayed);
+        }
+
+            public void AdicionarItensMyWishList()
         {
             _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
             product1.Click();
 
             _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
             btnAddToWiishList.Click();
+        }
+
+        public void AcessarSummary()
+        {
+            Thread.Sleep(1000);
+            _driver.Navigate().GoToUrl("http://automationpractice.com/index.php?controller=order");
         }
 
         public void Summary()
@@ -150,6 +167,11 @@ namespace Selecao_Stefanini.Page_Objects.Action
 
             Assert.IsTrue(lbOrderComplete.Text.Equals("Your order on My Store is complete."));
             Assert.IsTrue(valorFinal.Equals(ValorCompraTotal));
+        }
+
+        public void ValidarTelaMyWishList()
+        {
+            Assert.IsFalse(_driver.Title.Equals("My Store"));
         }
     }
 }
